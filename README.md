@@ -1,6 +1,6 @@
 # DeepChrome
 
-Go to Vizualization Website: [DeepChrome visualization website](www.qdata.cs.virginia.edu)
+Go to Vizualization Website: [DeepChrome visualization website](www.qdataw.cs.virginia.edu)
 
 Reference Paper: [DeepChrome: Deep-learning for predicting gene expression from histone modifications](https://arxiv.org/abs/1607.02078)
 
@@ -10,7 +10,9 @@ learnt deep models. Through the CNN model, DeepChrome incorporates representatio
 **Feature Generation for DeepChrome model:** 
 Bins of length 100 base-pairs (bp) are selected from regions (+/- 5000 bp) flanking the transcription start site (TSS) of each gene. The signal value of all five selected histone modifications from REMC in bins forms input matrix X, while discretized gene expression (label +1/-1) is the output y.
 
-Toy dataset has been provided inside data folder.
+Toy dataset has been provided inside code/data folder.
+
+After downloading code/ folder:
 
 To perform training : 
 ```
