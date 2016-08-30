@@ -16,7 +16,7 @@ To perform training :
 ```
 th doall.lua
 ```
-To perform testing/Get vizulaozation output: 
+To perform testing/Get visualization output: 
 ```
 the doall_eval.lua
 ```
