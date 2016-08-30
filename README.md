@@ -1,6 +1,6 @@
 # DeepChrome
 
-Go to Vizualization Website: [DeepChrome visualization website](www.qdataw.cs.virginia.edu)
+Go to Vizualization Website: [DeepChrome visualization website](qdataw.cs.virginia.edu)
 
 Reference Paper: [DeepChrome: Deep-learning for predicting gene expression from histone modifications](https://arxiv.org/abs/1607.02078)
 
