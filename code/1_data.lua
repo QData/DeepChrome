@@ -10,22 +10,15 @@
 
 -- make sure you specify the number of windows for each gene in "local windows"
 
--- Ritambhara Singh
+-- Ritambhara Singh(rs3zz@virginia.edu)
 -------------------------------------------------------------------
 require 'torch'
 require 'math'
 
 -- Read CSV file
 
--- Split string
 
-function string:split(sep)
-  local sep, fields = sep, {}
-  local pattern = string.format("([^%s]+)", sep)
-  self:gsub(pattern, function(substr) fields[#fields + 1] = substr end)
-  return fields
-end
-
+-- Change file name to "test.csv" from "valid.csv" while testing
 inFiles={opt.dataDir .. opt.dataset .. "/" .. "train.csv", opt.dataDir .. opt.dataset .. "/" .. "valid.csv"}
 
 trainset={}
@@ -62,9 +55,6 @@ for f=1,2 do
     local csvFile = io.open(filePath, 'r')
     --local header = csvFile:read() -- use if header present
 
-   
-    --print(#data)
-    -- Code modified by rs3zz
 
     local i = 0
     local j = 1
@@ -103,10 +93,6 @@ for f=1,2 do
     
     if f==1 then trainset=new_data else testset=new_data end
     
-    -- Serialize tensor
-    --local outputFilePath = outFiles[f]
-    --torch.save(outputFilePath)
-
 end
 
 -------------------------End of Code -----------------------------------------

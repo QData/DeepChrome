@@ -1,9 +1,12 @@
+----------------------------------------------------------------------
+-- NN model 
+---------------------------------------------------------------------
 require 'torch'   -- torch
 require 'image'   -- for image transforms
 require 'nn'      -- provides all sorts of trainable modules/layers
 require 'math'
 ----------------------------------------------------------------------
-print '==>DeepChrome Regression Model' 
+print '==>DeepChrome Classification Model' 
 print '==> define parameters'
 
 -- Classification problem
@@ -53,9 +56,9 @@ elseif opt.model == 'convnet' then
   model:add(nn.TemporalMaxPooling(poolsize))
 
   -- stage 2 : standard 2-layer neural network
-  model:add(nn.View((filtsize-1)*(poolsize-3)*nstates[1]))
+  model:add(nn.View(math.ceil((width-filtsize)/poolsize)*nstates[1]))
   model:add(nn.Dropout(0.5))
-  model:add(nn.Linear((filtsize-1)*(poolsize-3)*nstates[1], nstates[2]))
+  model:add(nn.Linear(math.ceil((width-filtsize)/poolsize)*nstates[1], nstates[2]))
   model:add(nn.ReLU())
   model:add(nn.Linear(nstates[2], nstates[3]))
 

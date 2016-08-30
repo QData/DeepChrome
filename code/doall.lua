@@ -25,9 +25,9 @@ local set = function()
       cmd:option('-threads', 2, 'number of threads')
       cmd:option('--epochs', 100, 'number of epochs')
       --data:
-      cmd:option('-dataDir', "/bigtemp/rs3zz/DeepChrome/", 'The data home location')
-      cmd:option('-dataset', "toy/classification", 'Dataset name, corresponds to the folder name in dataDir')
-      cmd:option('-resultsDir', "/bigtemp/rs3zz/DeepChrome/results/", 'The data home location')
+      cmd:option('-dataDir', "data/", 'The data home location')
+      cmd:option('-dataset', "toy/", 'Dataset name, corresponds to the folder name in dataDir')
+      cmd:option('-resultsDir', "results/", 'The data home location')
       cmd:option('-name', "", 'Optionally, give a name for this model')
       cmd:option('-trsize', "10", 'Training set size (number of genes)')
       cmd:option('-tssize', "10", 'Test set size (number of genes)')
@@ -60,14 +60,6 @@ end
 set()
 
 -- nb of threads and fixed seed (for repeatable experiments)
-if opt.type == 'float' then
-   print('==> switching to floats')
-   torch.setdefaulttensortype('torch.FloatTensor')
-elseif opt.type == 'cuda' then
-   print('==> switching to CUDA')
-   require 'cunn'
-   torch.setdefaulttensortype('torch.FloatTensor')
-end
 
 torch.setnumthreads(opt.threads)
 torch.manualSeed(opt.seed)

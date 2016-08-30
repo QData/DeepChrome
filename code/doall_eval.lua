@@ -21,11 +21,11 @@ local set = function()
 
       -- global:
 
-      cmd:option('-epoch', 5, 'epoch number of best model')
+      cmd:option('-epoch', 1, 'epoch number of best model')
       --data:
-      cmd:option('-dataDir', "/bigtemp/rs3zz/DeepChrome/", 'The data home location')
-      cmd:option('-dataset', "toy/classification", 'Dataset name, corresponds to the folder name in dataDir')
-      cmd:option('-resultsDir', "/bigtemp/rs3zz/DeepChrome/results/", 'The data home location')
+      cmd:option('-dataDir', "data/", 'The data home location')
+      cmd:option('-dataset', "toy/", 'Dataset name, corresponds to the folder name in dataDir')
+      cmd:option('-resultsDir', "results/", 'The data home location')
       cmd:option('-name', "", 'Optionally, give a name for this model')
       cmd:option('-tssize', "9", 'Test set size (number of genes)')
 
@@ -34,23 +34,19 @@ end
 
 set()
 
--- nb of threads and fixed seed (for repeatable experiments)
-if opt.type == 'float' then
-   print('==> switching to floats')
-   torch.setdefaulttensortype('torch.FloatTensor')
-elseif opt.type == 'cuda' then
-   print('==> switching to CUDA')
-   require 'cunn'
-   torch.setdefaulttensortype('torch.FloatTensor')
-end
 
 ----------------------------------------------------------------------
 print '==> executing all'
 dofile '1_data.lua'
-dofile '8_featmap.lua'
+--perform testing:
+dofile '6_eval.lua'
+--perform visualization
+dofile '7_viz.lua'
 
 ----------------------------------------------------------------------
 print '==> evaluation!'
 
 test()
- 
+
+print '==> visualization!'
+viz_model() 
