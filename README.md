@@ -8,7 +8,16 @@ DeepChrome is a unified CNN framework that automatically learns combinatorial in
 learnt deep models. Through the CNN model, DeepChrome incorporates representations of both local neighboring bins as well as the whole gene.
 
 **Feature Generation for DeepChrome model:** 
+
+We used the five core histone modification (listed in the paper) read counts from REMC database as input matrix. We downloaded the files and used "bedtools multicov" to get the read counts. 
+
 Bins of length 100 base-pairs (bp) are selected from regions (+/- 5000 bp) flanking the transcription start site (TSS) of each gene. The signal value of all five selected histone modifications from REMC in bins forms input matrix X, while discretized gene expression (label +1/-1) is the output y.
+
+For gene expression, we used the RPKM read count files available in REMC database. We took the median of the RPKM read counts as threshold for assigning binary labels (-1: gene low, +1: gene high). 
+
+We divided the genes into 3 separate sets for training, validation and testing. It was a simple file split resulting into 6601, 6601 and 6600 genes respectively. 
+
+We performed training and validation on the first 2 sets and then reported AUC scores of best performing epoch model for the third test data set. 
 
 Toy dataset has been provided inside "code/data" folder.
 
