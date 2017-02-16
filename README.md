@@ -9,7 +9,7 @@ learnt deep models. Through the CNN model, DeepChrome incorporates representatio
 
 **Feature Generation for DeepChrome model:** 
 
-We used the five core histone modification (listed in the paper) read counts from REMC database as input matrix. We downloaded the files and used "bedtools multicov" to get the read counts. 
+We used the five core histone modification (listed in the paper) read counts from REMC database as input matrix. We downloaded the files from [REMC dabase](http://egg2.wustl.edu/roadmap/web_portal/processed_data.html#ChipSeq_DNaseSeq) and used "bedtools multicov" to get the read counts. 
 
 Bins of length 100 base-pairs (bp) are selected from regions (+/- 5000 bp) flanking the transcription start site (TSS) of each gene. The signal value of all five selected histone modifications from REMC in bins forms input matrix X, while discretized gene expression (label +1/-1) is the output y.
 
