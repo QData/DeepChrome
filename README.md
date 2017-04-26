@@ -4,6 +4,20 @@ Go to Vizualization Website: [DeepChrome visualization website](http://qdataw.cs
 
 Reference Paper: [DeepChrome: Deep-learning for predicting gene expression from histone modifications](http://bioinformatics.oxfordjournals.org/content/32/17/i639.abstract)
 
+BibTex Citation:
+```
+@article{singh2016deepchrome,
+  title={DeepChrome: deep-learning for predicting gene expression from histone modifications},
+  author={Singh, Ritambhara and Lanchantin, Jack and Robins, Gabriel and Qi, Yanjun},
+  journal={Bioinformatics},
+  volume={32},
+  number={17},
+  pages={i639--i648},
+  year={2016},
+  publisher={Oxford Univ Press}
+}
+```
+
 DeepChrome is a unified CNN framework that automatically learns combinatorial interactions among histone modification marks to predict the gene expression. It is able to handle all the bins together, capturing both neighboring range and long range interactions among input features, as well as automatically extract important features. In order to interpret what is learned, and understand the interactions among histone marks for prediction, we also implement an optimizationbased technique for visualizing combinatorial relationships from the
 learnt deep models. Through the CNN model, DeepChrome incorporates representations of both local neighboring bins as well as the whole gene.
 
