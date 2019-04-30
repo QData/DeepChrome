@@ -1,8 +1,7 @@
 # DeepChrome
 
-Go to Vizualization Website: [DeepChrome visualization website](http://qdataw.cs.virginia.edu/)
 
-Reference Paper: [DeepChrome: Deep-learning for predicting gene expression from histone modifications](http://bioinformatics.oxfordjournals.org/content/32/17/i639.abstract)
+### Reference Paper: [DeepChrome: Deep-learning for predicting gene expression from histone modifications](http://bioinformatics.oxfordjournals.org/content/32/17/i639.abstract)
 
 BibTex Citation:
 ```
@@ -20,6 +19,14 @@ BibTex Citation:
 
 DeepChrome is a unified CNN framework that automatically learns combinatorial interactions among histone modification marks to predict the gene expression. It is able to handle all the bins together, capturing both neighboring range and long range interactions among input features, as well as automatically extract important features. In order to interpret what is learned, and understand the interactions among histone marks for prediction, we also implement an optimizationbased technique for visualizing combinatorial relationships from the
 learnt deep models. Through the CNN model, DeepChrome incorporates representations of both local neighboring bins as well as the whole gene.
+
+
+### We have extended DeepChrome to AttentiveChrome @ 
+
+[https://github.com/QData/AttentiveChrome](https://github.com/QData/AttentiveChrome)
+
+AttentiveChrome is a unified architecture to model and to interpret dependencies among chromatin factors for controlling gene regulation. AttentiveChrome uses a hierarchy of multiple Long short-term memory (LSTM) modules to encode the input signals and to model how various chromatin marks cooperate automatically. AttentiveChrome trains two levels of attention jointly with the target prediction, enabling it to attend differentially to relevant marks and to locate important positions per mark. We evaluate the model across 56 different cell types (tasks) in human. Not only is the proposed architecture more accurate, but its attention scores also provide a better interpretation than state-of-the-art feature visualization methods such as saliency map.
+
 
 **Feature Generation for DeepChrome model:** 
 
