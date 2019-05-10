@@ -28,6 +28,7 @@ learnt deep models. Through the CNN model, DeepChrome incorporates representatio
 AttentiveChrome is a unified architecture to model and to interpret dependencies among chromatin factors for controlling gene regulation. AttentiveChrome uses a hierarchy of multiple Long short-term memory (LSTM) modules to encode the input signals and to model how various chromatin marks cooperate automatically. AttentiveChrome trains two levels of attention jointly with the target prediction, enabling it to attend differentially to relevant marks and to locate important positions per mark. We evaluate the model across 56 different cell types (tasks) in human. Not only is the proposed architecture more accurate, but its attention scores also provide a better interpretation than state-of-the-art feature visualization methods such as saliency map.
 
 
+
 **Feature Generation for DeepChrome model:** 
 
 We used the five core histone modification (listed in the paper) read counts from REMC database as input matrix. We downloaded the files from [REMC dabase](http://egg2.wustl.edu/roadmap/web_portal/processed_data.html#ChipSeq_DNaseSeq). We converted 'tagalign.gz' format to 'bam' by using the command:
@@ -56,3 +57,5 @@ To perform testing/Get visualization output:
 ```
 the doall_eval.lua
 ```
+
+The complete set of 56 Cell Type datasets is located at https://zenodo.org/record/2652278
