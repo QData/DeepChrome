@@ -60,7 +60,7 @@ the doall_eval.lua
 
 The complete set of 56 Cell Type datasets is located at https://zenodo.org/record/2652278
 
-Each row consists of 100 bins per gene and columns are organised as follows:
+The rows are bins for all genes (100 rows per gene) and the columns are organised as follows:
 
 GeneID, Bin ID, H3K27me3 count, H3K36me3 count, H3K4me1 count, H3K4me3 count, H3K9me3 counts, Binary Label for gene expression (0/1)  
 e.g. 000003,1,4,3,0,8,4,1
