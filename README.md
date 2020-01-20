@@ -21,14 +21,6 @@ DeepChrome is a unified CNN framework that automatically learns combinatorial in
 learnt deep models. Through the CNN model, DeepChrome incorporates representations of both local neighboring bins as well as the whole gene.
 
 
-### We have extended DeepChrome to AttentiveChrome @ 
-
-[https://github.com/QData/AttentiveChrome](https://github.com/QData/AttentiveChrome)
-
-AttentiveChrome is a unified architecture to model and to interpret dependencies among chromatin factors for controlling gene regulation. AttentiveChrome uses a hierarchy of multiple Long short-term memory (LSTM) modules to encode the input signals and to model how various chromatin marks cooperate automatically. AttentiveChrome trains two levels of attention jointly with the target prediction, enabling it to attend differentially to relevant marks and to locate important positions per mark. We evaluate the model across 56 different cell types (tasks) in human. Not only is the proposed architecture more accurate, but its attention scores also provide a better interpretation than state-of-the-art feature visualization methods such as saliency map.
-
-
-
 **Feature Generation for DeepChrome model:** 
 
 We used the five core histone modification (listed in the paper) read counts from REMC database as input matrix. We downloaded the files from [REMC dabase](http://egg2.wustl.edu/roadmap/web_portal/processed_data.html#ChipSeq_DNaseSeq). We converted 'tagalign.gz' format to 'bam' by using the command:
@@ -65,3 +57,30 @@ The rows are bins for all genes (100 rows per gene) and the columns are organise
 GeneID, Bin ID, H3K27me3 count, H3K36me3 count, H3K4me1 count, H3K4me3 count, H3K9me3 counts, Binary Label for gene expression (0/1)  
 e.g. 000003,1,4,3,0,8,4,1
 
+
+### We have extended DeepChrome to AttentiveChrome @ 
+
+[https://github.com/QData/AttentiveChrome](https://github.com/QData/AttentiveChrome)
+
++ AttentiveChrome is a unified architecture to model and to interpret dependencies among chromatin factors for controlling gene regulation. AttentiveChrome uses a hierarchy of multiple Long short-term memory (LSTM) modules to encode the input signals and to model how various chromatin marks cooperate automatically. AttentiveChrome trains two levels of attention jointly with the target prediction, enabling it to attend differentially to relevant marks and to locate important positions per mark. We evaluate the model across 56 different cell types (tasks) in human. Not only is the proposed architecture more accurate, but its attention scores also provide a better interpretation than state-of-the-art feature visualization methods such as saliency map.
+
++ A copy of AttentiveChrome Code is also added as subfolder ./AttentiveChrome-PyTorch in this repo. 
+
+Reference Paper: [Attend and Predict: Using Deep Attention Model to Understand Gene Regulation by Selective Attention on Chromatin](https://arxiv.org/abs/1708.00339)
+
+BibTex Citation:
+```
+@inproceedings{singh2017attend,
+  title={Attend and Predict: Understanding Gene Regulation by Selective Attention on Chromatin},
+  author={Singh, Ritambhara and Lanchantin, Jack and Sekhon, Arshdeep  and Qi, Yanjun},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={6769--6779},
+  year={2017}
+}
+```
+
+## We also provide trained AttentiveChrome models through the Kipoi model zoo     [http://kipoi.org/](http://kipoi.org/)
+
+Attentive Chrome model can be run using Kipoi, which is a repository of predictive models for genomics. All models in the repo can be used through shared API.
+
+- The utility codes to adapt AttentiveChrome to Kipoi are in ./AttentiveChrome-PyTorch/kipoiutil
