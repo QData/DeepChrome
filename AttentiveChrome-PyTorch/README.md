@@ -33,7 +33,7 @@ We performed training and validation on the first 2 sets and then reported AUC s
 
 **Datasets**
 
-We have provided a toy dataset to test out model in the data subdirectory of v2PyTorch
+We have provided a toy dataset in the data directory. 
 
 The complete set of 56 Cell Type datasets is located at https://zenodo.org/record/2652278
 
@@ -44,18 +44,17 @@ e.g. 000003,1,4,3,0,8,4,1
 
 **Running The Model** 
 
-See the v1LuaTorch or v2PyTorch directories to run the code.
-
-
-
-# v2PyTorch folder includes Pytorch version of the  AttentiveChrome Implementation. 
-You can run it via the following command: 
+# This folder includes Pytorch implementation of AttentiveChrome. 
+For the toy data set, you can run it via the following command: 
 
 ```
 python train.py --cell_type Toy
 ```
 
-
+For one of the 56 cell types, download https://zenodo.org/record/2652278 into the data directory and run the following command:
+```
+python train.py --cell_type E{cell_num}
+```
 
 ## We also provide trained AttentiveChrome models through the Kipoi model zoo     [http://kipoi.org/](http://kipoi.org/)
 
